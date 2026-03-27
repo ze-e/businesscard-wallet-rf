@@ -29,12 +29,3 @@ export function getUserIdFromRequest(request: NextRequest): string {
 
   throw new Error("Unauthorized: please login");
 }
-
-/**
- * Validates a user ID format
- * @param userId The user ID to validate
- * @returns Whether the user ID is valid
- */
-export function isValidUserId(userId: string): boolean {
-  return isValidUserId(userId);
-}
