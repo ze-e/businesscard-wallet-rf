@@ -1,0 +1,33 @@
+# dependencies/build
+node_modules
+.next
+out
+
+# env/secrets
+.env
+.env.*
+!.env.example
+
+# logs/caches/reports
+.npm-cache
+coverage
+playwright-report
+test-results
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# optional local db artifacts (if sqlite used later)
+prisma/*.db
+prisma/*.db-journal
+
+.TODOS
+.notes
+
+skills

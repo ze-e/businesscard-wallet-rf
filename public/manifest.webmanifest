@@ -1,0 +1,9 @@
+{
+  "name": "Digital Business Card Deck",
+  "short_name": "CardDeck",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f2",
+  "theme_color": "#0f766e",
+  "icons": []
+}
