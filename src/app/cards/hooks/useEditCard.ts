@@ -83,6 +83,14 @@ export function useEditCard(
     setEditForm((prev) => (prev ? { ...prev, logoImage: dataUrl } : prev));
   }, []);
 
+  const updateEditForm = useCallback((updates: Partial<CachedCard>) => {
+    setEditForm((prev) => (prev ? { ...prev, ...updates } : prev));
+  }, []);
+
+  const updateEditField = useCallback((field: keyof CachedCard, value: any) => {
+    setEditForm((prev) => (prev ? { ...prev, [field]: value } : prev));
+  }, []);
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
@@ -106,6 +114,8 @@ export function useEditCard(
     startEdit,
     requestCancelEdit,
     saveEdit,
-    replaceEditLogo
+    replaceEditLogo,
+    updateEditForm,
+    updateEditField
   };
 }

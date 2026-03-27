@@ -1,0 +1,115 @@
+/* Business card color themes */
+
+/* Forest theme */
+.theme-forest {
+  background: linear-gradient(135deg, #134e4a 0%, #115e59 46%, #0f766e 100%);
+  color: #f0fdfa;
+}
+
+/* Ocean theme */
+.theme-ocean {
+  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 42%, #2563eb 100%);
+  color: #eff6ff;
+}
+
+/* Sunset theme */
+.theme-sunset {
+  background: linear-gradient(135deg, #7c2d12 0%, #c2410c 40%, #ea580c 100%);
+  color: #fff7ed;
+}
+
+/* Slate theme */
+.theme-slate {
+  background: linear-gradient(135deg, #1f2937 0%, #334155 52%, #475569 100%);
+  color: #f8fafc;
+}
+
+/* Modern Black theme */
+.theme-modern-black {
+  background: linear-gradient(145deg, #060606 0%, #141414 55%, #1d1d1d 100%);
+  color: #f5f5f5;
+}
+
+.theme-modern-black .business-card-name,
+.theme-modern-black .business-card-company,
+.theme-modern-black .business-card-job,
+.theme-modern-black .business-card-contact,
+.theme-modern-black .business-card-address {
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+/* Classic Ivory theme */
+.theme-classic-ivory {
+  background: linear-gradient(140deg, #fffdf5 0%, #f5efdd 100%);
+  color: #3b3023;
+  border-color: rgba(116, 93, 60, 0.25);
+}
+
+.theme-classic-ivory .business-card-name,
+.theme-classic-ivory .business-card-company,
+.theme-classic-ivory .business-card-job,
+.theme-classic-ivory .business-card-contact,
+.theme-classic-ivory .business-card-address {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Royal Plum theme */
+.theme-royal-plum {
+  background: linear-gradient(140deg, #2b0a3d 0%, #4c1d95 45%, #7c3aed 100%);
+  color: #f5f3ff;
+}
+
+/* Neon Cyan theme */
+.theme-neon-cyan {
+  background: linear-gradient(145deg, #022c3a 0%, #0e7490 45%, #06b6d4 100%);
+  color: #ecfeff;
+}
+
+.theme-neon-cyan .business-card-name,
+.theme-neon-cyan .business-card-company {
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Earth Clay theme */
+.theme-earth-clay {
+  background: linear-gradient(145deg, #4a2c1f 0%, #8a4b2e 46%, #c06639 100%);
+  color: #fff8f1;
+}
+
+/* Mint Paper theme */
+.theme-mint-paper {
+  background: linear-gradient(145deg, #ecfff8 0%, #c4f1dc 100%);
+  color: #1b4332;
+  border-color: rgba(27, 67, 50, 0.2);
+}
+
+/* Rose Gold theme */
+.theme-rose-gold {
+  background: linear-gradient(145deg, #4c1d24 0%, #9f4962 48%, #d6a06d 100%);
+  color: #fff7ed;
+}
+
+/* Midnight Amber theme */
+.theme-midnight-amber {
+  background: linear-gradient(145deg, #111827 0%, #1f2937 55%, #d97706 100%);
+  color: #fff7ed;
+}
+
+/* Skyline theme */
+.theme-skyline {
+  background: linear-gradient(145deg, #0f172a 0%, #1e3a8a 42%, #38bdf8 100%);
+  color: #f0f9ff;
+}
+
+/* Mono Paper theme */
+.theme-mono-paper {
+  background: linear-gradient(145deg, #ffffff 0%, #ececec 100%);
+  color: #111111;
+  border-color: rgba(17, 17, 17, 0.2);
+}
+
+.theme-mono-paper .business-card-name,
+.theme-mono-paper .business-card-company {
+  font-family: "Courier New", monospace;
+}

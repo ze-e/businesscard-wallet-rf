@@ -1,84 +1,87 @@
 import { FC } from 'react';
 import { CachedCard } from '@/lib/idb';
 import { TEMPLATE_OPTIONS, COLOR_SCHEME_OPTIONS } from '../constants';
-import { CardTemplate, CardColorScheme } from '../types';
 
 interface StyleCardModalProps {
-  stylingCard: CachedCard;
-  setStylingCard: (card: CachedCard | null) => void;
-  busyCardId: string | null;
-  saveStyle: () => void;
+  isOpen: boolean;
+  card: CachedCard | null;
+  onClose: () => void;
+  onSave: () => void;
+  isSaving: boolean;
+  onUpdateField: (field: keyof CachedCard, value: any) => void;
 }
 
-export const StyleCardModal: FC<StyleCardModalProps> = ({ stylingCard, setStylingCard, busyCardId, saveStyle }) => {
+export const StyleCardModal: FC<StyleCardModalProps> = ({
+  isOpen,
+  card,
+  onClose,
+  onSave,
+  isSaving,
+  onUpdateField
+}) => {
+  if (!isOpen || !card) return null;
+
   return (
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="style-modal-title">
-      <div className="modal-card modal-card-wide">
-        <h2 id="style-modal-title">Card Style</h2>
-        <p className="muted">Preview and customize this card look.</p>
-        <div className="style-spotlight">
-          <div className={`business-card theme-${stylingCard.colorScheme || "forest"} template-${stylingCard.template || "classic"}`}>
-            {(stylingCard.template || "classic") === "split" && <div className="business-card-accent" aria-hidden="true" />}
+      <div className="modal-card">
+        <h2 id="style-modal-title">Style Card</h2>
+
+        <div className="style-preview-wrapper" style={{ marginBottom: 16 }}>
+          <div className={`business-card theme-${card.colorScheme || 'forest'} template-${card.template || 'classic'}`}>
+            {(card.template || 'classic') === 'split' && <div className="business-card-accent" aria-hidden="true" />}
             <div className="business-card-main">
               <div className="business-card-top">
-                {stylingCard.logoImage && <img src={stylingCard.logoImage} alt="Card logo" className="business-card-logo" />}
+                {card.logoImage && <img src={card.logoImage} alt="Card logo" className="business-card-logo" />}
                 <div className="business-card-identity">
-                  <h3 className="business-card-name">{stylingCard.name}</h3>
-                  {stylingCard.company && <p className="business-card-company">{stylingCard.company}</p>}
-                  {stylingCard.jobTitle && <p className="business-card-job">{stylingCard.jobTitle}</p>}
+                  <h3 className="business-card-name">{card.name}</h3>
+                  {card.company && <p className="business-card-company">{card.company}</p>}
+                  {card.jobTitle && <p className="business-card-job">{card.jobTitle}</p>}
                 </div>
               </div>
               <div className="business-card-contact">
-                {stylingCard.phones[0] && <p>Phone: {stylingCard.phones[0]}</p>}
-                {stylingCard.emails[0] && <p>Email: {stylingCard.emails[0]}</p>}
-                {stylingCard.websites[0] && <p>Web: {stylingCard.websites[0]}</p>}
+                {card.phones[0] && <p>Phone: {card.phones[0]}</p>}
+                {card.emails[0] && <p>Email: {card.emails[0]}</p>}
+                {card.websites[0] && <p>Web: {card.websites[0]}</p>}
               </div>
-              {stylingCard.address && <p className="business-card-address">{stylingCard.address}</p>}
+              {card.address && <p className="business-card-address">{card.address}</p>}
             </div>
           </div>
         </div>
-        <div className="row" style={{ marginTop: 10 }}>
-          <label>
-            Color Scheme
-            <select
-              value={stylingCard.colorScheme || "forest"}
-              onChange={(e) =>
-                setStylingCard((prev) =>
-                  prev ? { ...prev, colorScheme: e.target.value as CardColorScheme } : prev
-                )
-              }
-            >
-              {COLOR_SCHEME_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Template
-            <select
-              value={stylingCard.template || "classic"}
-              onChange={(e) =>
-                setStylingCard((prev) =>
-                  prev ? { ...prev, template: e.target.value as CardTemplate } : prev
-                )
-              }
-            >
-              {TEMPLATE_OPTIONS.map((opt) => (
-                <option key={opt.value} value={opt.value}>
-                  {opt.label}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
+
+        <label>
+          Template
+          <select
+            value={card.template}
+            onChange={(e) => onUpdateField('template', e.target.value)}
+          >
+            {TEMPLATE_OPTIONS.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Color Scheme
+          <select
+            value={card.colorScheme}
+            onChange={(e) => onUpdateField('colorScheme', e.target.value)}
+          >
+            {COLOR_SCHEME_OPTIONS.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
         <div className="modal-actions">
-          <button disabled={busyCardId === stylingCard.id} onClick={saveStyle}>
-            Save Style
-          </button>
-          <button className="button-secondary" onClick={() => setStylingCard(null)}>
+          <button className="button-secondary" onClick={onClose}>
             Cancel
+          </button>
+          <button className="button-primary" onClick={onSave} disabled={isSaving}>
+            {isSaving ? 'Saving...' : 'Save Style'}
           </button>
         </div>
       </div>

@@ -1,0 +1,45 @@
+/* Upload component styles */
+.card-upload {
+  margin: 1rem 0;
+}
+
+.card-upload-input {
+  display: none;
+}
+
+.card-upload-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px dashed #cfd4dc;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-upload-button:hover {
+  background: #eef2f7;
+  border-color: #9ca3af;
+}
+
+.card-upload-icon,
+.card-upload-upload {
+  font-size: 22px;
+}
+
+.card-upload-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.card-upload-text strong {
+  font-size: 15px;
+}
+
+.card-upload-text span {
+  font-size: 12px;
+  color: #6b7280;
+}

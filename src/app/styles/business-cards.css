@@ -1,0 +1,102 @@
+/* Business card core styles */
+.business-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 3.5 / 2;
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+
+.business-card-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.business-card-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 18%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.business-card-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.business-card-logo {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.business-card-name {
+  margin: 0;
+}
+
+.business-card-company,
+.business-card-job,
+.business-card-address,
+.business-card-contact p {
+  margin: 0;
+}
+
+.business-card-contact {
+  display: grid;
+  gap: 4px;
+}
+
+.card-icon-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.card-icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(17, 24, 39, 0.35);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0;
+}
+
+.card-icon-button:hover {
+  background: rgba(17, 24, 39, 0.58);
+}
+
+.style-spotlight {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
+  padding: 16px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}

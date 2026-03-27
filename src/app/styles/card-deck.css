@@ -1,0 +1,62 @@
+/* Card deck and list styles */
+.card-deck-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.card-deck-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--panel);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-deck-list {
+  overflow-y: auto;
+  padding-top: 12px;
+}
+
+.card-deck-list > .panel:last-child {
+  margin-bottom: 0;
+}
+
+.business-card-identity {
+  min-width: 0;
+}
+
+.card-deck-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card-deck-mobile-toggle {
+  display: none;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.card-deck-controls {
+  display: none;
+  padding-bottom: 10px;
+}
+
+.card-deck-controls.is-open {
+  display: block;
+}
+
+.card-deck-header {
+  padding-bottom: 0;
+}
+
+.card-deck-mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+}

@@ -1,0 +1,190 @@
+/* Business card layout templates */
+
+/* Classic template */
+.template-classic .business-card-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.template-classic .business-card-company {
+  font-size: 0.92rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.template-classic .business-card-job {
+  font-size: 0.84rem;
+  opacity: 0.9;
+}
+
+/* Split template */
+.template-split .business-card-main {
+  padding-left: 18%;
+}
+
+.template-split .business-card-name {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 1.22rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.template-split .business-card-company {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.template-split .business-card-contact {
+  font-size: 0.78rem;
+}
+
+/* Minimal template */
+.template-minimal .business-card-top {
+  align-items: flex-start;
+}
+
+.template-minimal .business-card-logo {
+  width: 52px;
+  height: 52px;
+}
+
+.template-minimal .business-card-name {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.template-minimal .business-card-company {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.template-minimal .business-card-contact {
+  gap: 3px;
+  font-size: 0.76rem;
+  opacity: 0.95;
+}
+
+.template-minimal .business-card-address {
+  font-size: 0.72rem;
+  opacity: 0.88;
+}
+
+/* Right Anchor template */
+.template-right-anchor .business-card-top {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.template-right-anchor .business-card-identity {
+  order: 1;
+  text-align: left;
+}
+
+.template-right-anchor .business-card-logo {
+  order: 2;
+  margin-left: auto;
+}
+
+/* Center Focus template */
+.template-center-focus .business-card-top {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.template-center-focus .business-card-identity,
+.template-center-focus .business-card-contact,
+.template-center-focus .business-card-address {
+  text-align: center;
+  justify-items: center;
+}
+
+.template-center-focus .business-card-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  padding: 8px;
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+.template-center-focus .business-card-name {
+  font-size: 1.38rem;
+  letter-spacing: 0.02em;
+}
+
+.template-center-focus .business-card-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.template-center-focus .business-card-contact p {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+/* Text Over Logo template */
+.template-text-over-logo .business-card-top {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.template-text-over-logo .business-card-identity {
+  order: 1;
+  text-align: left;
+  max-width: 74%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.template-text-over-logo .business-card-logo {
+  order: 2;
+  align-self: flex-end;
+  width: 62px;
+  height: 62px;
+  transform: translateY(-2px);
+}
+
+.template-text-over-logo .business-card-contact,
+.template-text-over-logo .business-card-address {
+  text-align: right;
+  justify-items: end;
+}
+
+.template-text-over-logo .business-card-contact {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 8px;
+}
+
+/* Text Under Logo template */
+.template-text-under-logo .business-card-top {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.template-text-under-logo .business-card-logo {
+  order: 1;
+}
+
+.template-text-under-logo .business-card-identity {
+  order: 2;
+  text-align: center;
+}
+
+.template-text-under-logo .business-card-contact,
+.template-text-under-logo .business-card-address {
+  text-align: center;
+  justify-items: center;
+}

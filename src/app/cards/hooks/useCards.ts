@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
 import { apiFetch } from "@/lib/api-client";
 import { cacheCards, getCachedCards, type CachedCard } from "@/lib/idb";
-import { CardSortOption, ServerCard } from './types';
+import { CardSortOption, ServerCard } from '../types';
 
 export function useCards(query: string, sortOption: CardSortOption) {
   const [online, setOnline] = useState(typeof navigator !== "undefined" ? navigator.onLine : true);

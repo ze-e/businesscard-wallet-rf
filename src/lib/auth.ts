@@ -2,6 +2,9 @@ import { NextRequest } from "next/server";
 import { readSessionToken, SESSION_COOKIE } from "@/lib/session";
 import { isValidUserId } from "./id-validator";
 
+// Re-export for convenience
+export { isValidUserId };
+
 /** Session user information */
 export interface SessionUser {
   userId: string;

@@ -1,0 +1,36 @@
+/* Button styles */
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.button-danger {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.nav-link-button {
+  width: auto;
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav-link-button:hover {
+  background: var(--accent-soft);
+}

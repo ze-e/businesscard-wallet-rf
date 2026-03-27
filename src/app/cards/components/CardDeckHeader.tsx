@@ -17,7 +17,7 @@ export const CardDeckHeader: FC<CardDeckHeaderProps> = ({ isMobileHeaderExpanded
           className="button-secondary card-deck-mobile-toggle"
           aria-expanded={isMobileHeaderExpanded}
           aria-controls="card-deck-controls"
-          onClick={() => setIsMobileHeaderExpanded((prev) => !prev)}
+          onClick={() => setIsMobileHeaderExpanded(!isMobileHeaderExpanded)}
         >
           <>
             {isMobileHeaderExpanded ? "Hide Search" : "Search Wallet"}

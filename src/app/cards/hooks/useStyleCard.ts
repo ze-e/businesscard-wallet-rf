@@ -17,6 +17,10 @@ export function useStyleCard(
     setStylingCard({ ...card });
   }, []);
 
+  const closeStyle = useCallback(() => {
+    setStylingCard(null);
+  }, []);
+
   const saveStyle = useCallback(async () => {
     if (!stylingCard) return;
     if (!online) {
@@ -49,5 +53,13 @@ export function useStyleCard(
     }
   }, [stylingCard, online, loadCards, setError, setStatusMessage, setBusyCardId]);
 
-  return { stylingCard, startStyle, saveStyle };
-}
+  const updateStyleForm = useCallback((updates: Partial<CachedCard>) => {
+    setStylingCard((prev) => (prev ? { ...prev, ...updates } : prev));
+  }, []);
+
+  const updateStyleField = useCallback((field: keyof CachedCard, value: any) => {
+    setStylingCard((prev) => (prev ? { ...prev, [field]: value } : prev));
+  }, []);
+
+  return { stylingCard, startStyle, saveStyle, closeStyle, updateStyleForm, updateStyleField };
+};

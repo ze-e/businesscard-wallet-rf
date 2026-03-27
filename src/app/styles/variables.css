@@ -1,0 +1,11 @@
+/* CSS Custom Properties for colors and borders */
+:root {
+  --bg: #f4f7f2;
+  --panel: #ffffff;
+  --text: #1d2a20;
+  --muted: #5c6a61;
+  --accent: #0f766e;
+  --accent-soft: #d4f4ef;
+  --border: #d6dfd8;
+  --error: #b91c1c;
+}
